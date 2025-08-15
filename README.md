@@ -22,10 +22,61 @@ El módulo nativo sólo existe en Kotlin.
 
 <img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/c4310af3-4473-47c9-a307-06dbbd9582c8" />
 
+## Native Module in Kotlin: SecureViewer
+
+``` js
+<SecureViewer
+      {...selectedCard}
+      visible={selectedCard.visible}
+      hmacSignature={selectedCard.hmacSignature}
+      onPresented={({nativeEvent}) => console.log('presented', nativeEvent)}
+      onClosed={({nativeEvent}) => {
+          onCloseModal()
+      }}
+      onTimeout={({nativeEvent}) => {
+          onCloseModal()
+      }}
+      onError={({nativeEvent}) => {
+          handleError(nativeEvent)
+      }}
+  />
+
+```
+
+### `SecureViewer Props`
+
+> Extiende los props de React Native **ViewProps** (e.g., `style`, `testID`, accessibility props).
+
+| Prop            | Type                                                 | Required | Default | Description |
+|-----------------|------------------------------------------------------|----------|---------|-------------|
+| `visible`       | `boolean`                                            | Yes      | —       | Controla la visibilidad del modal. |
+| `cardId`        | `string`                                             | Yes      | —       | Identificador único de la tarjeta. |
+| `cardNumber`    | `string`                                             | Yes      | —       | Número de tarjeta formateado (e.g., `**** **** **** 1234`). |
+| `cardNumberRaw` | `string`                                             | Yes      | —       | Número de tarjeta. |
+| `cvv`           | `string`                                             | Yes      | —       | Código de verificación de pagos de la tarjeta. |
+| `expiryMonth`   | `Int32`                                              | Yes      | —       | Mes de vencimiento (1–12). |
+| `expiryYear`    | `Int32`                                              | Yes      | —       | Año de vencimiento (Debe tener 4 dígitos). |
+| `cardholder`    | `string`                                             | Yes      | —       | Nombre completo del cliente. |
+| `sessionToken`  | `string`                                             | Yes      | —       | Token de session. |
+| `tokenExpiresAt`| `Double`                                             | Yes      | —       | Timestamp del `sessionToken`. |
+| `hmacKey`       | `string`                                             | Yes      | —       | Secret key HMAC. |
+| `hmacSignature` | `string`                                             | Yes      | —       | HMAC sobre el payload. |
+| `onPresented`   | `DirectEventHandler<{ cardId: string }>`             | No       | —       | Se dispara cuando el componente se abre. |
+| `onClosed`      | `DirectEventHandler<{ cardId: string; reason?: string }>` | No  | —       | Se dispara cuando el modal se cierra. `reason` es la propiedad con el detalle. |
+| `onTimeout`     | `DirectEventHandler<{ cardId: string }>`             | No       | —       | Se dispara cuando hay un times out por sesión. |
+| `onError`       | `DirectEventHandler<{ cardId: string; code: string; message: string }>` | No | — | Se dispara cuando hay un error. |
+
+#### Event payload shapes
+
+| Event        | Payload shape                                              |
+|--------------|------------------------------------------------------------|
+| `onPresented`| `{ cardId: string }`                                       |
+| `onClosed`   | `{ cardId: string; reason?: string }`                      |
+| `onTimeout`  | `{ cardId: string }`                                       |
+| `onError`    | `{ cardId: string; code: string; message: string }`        |
 
 
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
 # Pasos para levanar el proyecto
 
