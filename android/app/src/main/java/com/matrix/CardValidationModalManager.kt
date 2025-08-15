@@ -117,6 +117,7 @@ class CardValidationModalManager : SimpleViewManager<CardValidationModalView>() 
   @ReactProp(name = "visible") fun setVisible(v: CardValidationModalView, value: Boolean) { v.visible = value; scheduleMaybePresent(v) }
   @ReactProp(name = "cardId") fun setCardId(v: CardValidationModalView, value: String) { v.cardId = value }
   @ReactProp(name = "cardNumber") fun setCardNumber(v: CardValidationModalView, value: String) { v.cardNumber = value }
+  @ReactProp(name = "cardNumberRaw") fun setCardNumberRaw(v: CardValidationModalView, value: String) { v.cardNumberRaw = value }
   @ReactProp(name = "cvv") fun setCvv(v: CardValidationModalView, value: String) { v.cvv = value }
   @ReactProp(name = "expiryMonth") fun setExpiryMonth(v: CardValidationModalView, value: Int) { v.expiryMonth = value }
   @ReactProp(name = "expiryYear") fun setExpiryYear(v: CardValidationModalView, value: Int) { v.expiryYear = value }
@@ -167,6 +168,7 @@ class CardValidationModalManager : SimpleViewManager<CardValidationModalView>() 
     val xs = mutableListOf<String>()
     if (v.cardId.isEmpty()) xs += "cardId"
     if (v.cardNumber.isEmpty()) xs += "cardNumber"
+    if (v.cardNumberRaw.isEmpty()) xs += "cardNumberRaw"
     if (v.cvv.isEmpty()) xs += "cvv"
     if (v.expiryMonth !in 1..12) xs += "expiryMonth"
     if (v.expiryYear <= 0) xs += "expiryYear"
@@ -181,7 +183,7 @@ class CardValidationModalManager : SimpleViewManager<CardValidationModalView>() 
 
     setSecure(activity, true)
 
-    val message = "Cardholder: ${v.cardholder}\ncvv: ${v.cvv}\nCard Number: ${v.cardNumber}\nExpiration Date: ${v.expiryMonth}/${v.expiryYear}\n(Visible for 60s)"
+    val message = "Cardholder: ${v.cardholder}\ncvv: ${v.cvv}\nCard Number: ${v.cardNumberRaw}\nExpiration Date: ${v.expiryMonth}/${v.expiryYear}\n(Visible for 60s)"
     val dlg = AlertDialog.Builder(activity)
       .setTitle("Credit Card")
       .setMessage(message)

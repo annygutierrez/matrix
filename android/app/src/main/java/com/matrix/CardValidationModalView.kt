@@ -11,6 +11,7 @@ class CardValidationModalView(context: Context) : FrameLayout(context) {
   var visible: Boolean = false
   var cardId: String = ""
   var cardNumber: String = ""
+  var cardNumberRaw: String = ""
   var cvv: String = ""
   var expiryMonth: Int = 1
   var expiryYear: Int = 1970

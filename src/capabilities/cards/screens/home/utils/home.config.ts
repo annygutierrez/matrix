@@ -12,5 +12,13 @@ export const defaultCardValues = {
     cardholder: '',
     sessionToken: 'tok_abc',
     tokenExpiresAt: 0,
-    hmacKey: ''
+    hmacKey: '',
+    cardNumberRaw: ''
+}
+
+export type SecureCardError = {
+    message: string;
+    code: string;
+    cardId: string;
+    target: number;
 }

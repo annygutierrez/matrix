@@ -6,6 +6,7 @@ export interface NativeProps extends ViewProps {
   visible: boolean;
   cardId: string;
   cardNumber: string;
+  cardNumberRaw: string;
   cvv: string;
   expiryMonth: Int32;
   expiryYear: Int32;

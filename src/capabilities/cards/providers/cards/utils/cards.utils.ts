@@ -16,6 +16,7 @@ export type Card = {
     sessionToken: string;
     tokenExpiresAt: number;
     hmacKey: string;
+    cardNumberRaw: string;
 }
 
 export const cardsDefaultValues = [
@@ -34,7 +35,8 @@ export const cardsDefaultValues = [
         sessionToken: 'tok_abc',
         tokenExpiresAt: 0,
         hmacKey: 'secret',
-        visible: false
+        visible: false,
+        cardNumberRaw: '3890 3890 3890 3890'
     },
     {
         bankLogo: 'https://muevete.falabella.com/static/media/banco-falabella.4b58696271d1d19083c0.png',
@@ -51,7 +53,8 @@ export const cardsDefaultValues = [
         sessionToken: 'tok_abc',
         tokenExpiresAt: 0,
         hmacKey: 'secret',
-        visible: false
+        visible: false,
+        cardNumberRaw: '1287 1287 1287 1287'
     }
 ]
 

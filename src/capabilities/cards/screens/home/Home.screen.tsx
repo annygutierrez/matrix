@@ -10,7 +10,8 @@ export const HomeScreen = () => {
     SecureViewer,
     selectedCard,
     onSelectCard,
-    onCloseModal
+    onCloseModal,
+    handleError
 } = useHomeScreen();
 
     return (
@@ -28,16 +29,13 @@ export const HomeScreen = () => {
                 hmacSignature={selectedCard.hmacSignature}
                 onPresented={({nativeEvent}) => console.log('presented', nativeEvent)}
                 onClosed={({nativeEvent}) => {
-                    console.log('HOLAAA');
                     onCloseModal()
                 }}
                 onTimeout={({nativeEvent}) => {
-                    console.log('HOLAAA2');
                     onCloseModal()
                 }}
                 onError={({nativeEvent}) => {
-                    console.log('HOLAAA3', nativeEvent);
-                    onCloseModal()
+                    handleError(nativeEvent)
                 }}
             />
         </View>

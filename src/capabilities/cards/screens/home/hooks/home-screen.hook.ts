@@ -1,16 +1,18 @@
-import { useState } from "react";
-import { SecureViewerFactory } from "../../../../../core/implementations/secure-viewer/secure-viewer.factory";
-import { useSessionContext } from "../../../../auth/providers/session/hooks";
-import { useCardsContext } from "../../../providers/cards/hooks";
-import { Card } from "../../../providers";
+import { useState } from 'react';
+import { SecureViewerFactory } from '../../../../../core/implementations/secure-viewer/secure-viewer.factory';
+import { useSessionContext } from '../../../../auth/providers/session/hooks';
+import { useCardsContext } from '../../../providers/cards/hooks';
+import { Card } from '../../../providers';
 import encHex from 'crypto-js/enc-hex';
-import { defaultCardValues } from "../utils/home.config";
-import { HmacSHA256 } from "crypto-js";
+import { defaultCardValues, SecureCardError } from '../utils/home.config';
+import { HmacSHA256 } from 'crypto-js';
+import { useToastContext } from '../../../../../shared/providers/ToastProvider/hooks';
 
 export const useHomeScreen = () => {
   const [visible, setVisible] = useState(false);
   const [selectedCard, setSelectedCard] = useState<Card>({ visible: false });
   const { userProfile } = useSessionContext();
+  const toast = useToastContext();
   const { cards } = useCardsContext();
   const { SecureViewer } = SecureViewerFactory.getLibrary();
   const tokenExpiresAt = Date.now() + 5 * 60_000;
@@ -30,6 +32,11 @@ export const useHomeScreen = () => {
     setSelectedCard({ ...defaultCardValues, visible: false });
   }
 
+  const handleError = (nativeEvent: SecureCardError) => {
+    onCloseModal();
+    toast.show('Hubo un error: ' + nativeEvent.message)
+  }
+
     return {
         userProfile,
         cards,
@@ -40,6 +47,7 @@ export const useHomeScreen = () => {
         setSelectedCard,
         selectedCard,
         onSelectCard,
-        onCloseModal
+        onCloseModal,
+        handleError
     }
 }
