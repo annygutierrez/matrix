@@ -78,7 +78,7 @@ El módulo nativo sólo existe en Kotlin.
 
 
 
-# Pasos para levanar el proyecto
+# Pasos para iniciar el proyecto
 
 ## Step 1: Start Metro
 
