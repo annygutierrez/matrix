@@ -2,6 +2,9 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Reto Matrix
 
+## Video de referencia
+- https://drive.google.com/file/d/1SEqnO_hv7cE-2vnHh59ayJQyuVb0O-Bs/view?usp=sharing
+
 <img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/f48bc1bd-f82c-4fbe-9bdc-d12ee9776f9a" />
 
 <img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/baa63d94-f4f5-45f7-ac17-3e00f24078bb" />
