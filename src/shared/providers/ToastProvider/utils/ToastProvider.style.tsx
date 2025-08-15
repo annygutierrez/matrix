@@ -11,9 +11,12 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       paddingHorizontal: 16,
     },
-    top:    { top: Platform.select({ios: 60, android: 24, default: 24}) as number },
-    bottom: { bottom: Platform.select({ios: 40, android: 24, default: 24}) as number },
-  
+    top:    {
+        top: Platform.select({ios: 60, android: 24, default: 24}) as number
+    },
+    bottom: {
+        bottom: Platform.select({ios: 40, android: 24, default: 24}) as number
+    },
     toast: {
       maxWidth: 640,
       alignSelf: 'center',
@@ -38,5 +41,6 @@ export const styles = StyleSheet.create({
       color: '#fff',
       fontSize: 14,
     },
+    childrenContainer: {flex: 1}
   });
   

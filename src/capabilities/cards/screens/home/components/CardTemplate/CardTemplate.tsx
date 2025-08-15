@@ -11,15 +11,34 @@ export const CardTemplate = ({
   onPress: (_card: Card) => void
 }) => {
     return (
-        <Pressable onPress={() => onPress(card)}>
-            <LinearGradient colors={card?.gradient} style={styles.container}>
+        <Pressable
+          onPress={() => onPress(card)}
+          testID="card-template-pressable"    
+        >
+            <LinearGradient
+              colors={card?.gradient}
+              style={styles.container}
+              testID="card-template-gradient"
+            >
                 <View style={styles.leftSide}>
-                <Image resizeMode="contain" width={60} height={30} source={{ uri: card?.bankLogo }} />
-                <Text.Label style={styles.cardNumber}>{card?.cardNumber}</Text.Label>
+                    <Image
+                    resizeMode="contain"
+                    width={60}
+                    height={30}
+                    source={{ uri: card?.bankLogo }}
+                    testID="card-template-bank-logo"       
+                    />
+                    <Text.Label style={styles.cardNumber}>{card?.cardNumber}</Text.Label>
                 </View>
                 <View style={styles.rightSide}>
-                <Text.Label style={styles.expiration}>Ven. {card?.expirationDate}</Text.Label>
-                <Image resizeMode="contain" width={40} height={24} source={{ uri: card?.sponsorLogo }} />
+                    <Text.Label style={styles.expiration}>Ven. {card?.expirationDate}</Text.Label>
+                    <Image
+                      resizeMode="contain"
+                      width={40}
+                      height={24}
+                      source={{ uri: card?.sponsorLogo }}
+                      testID="card-template-sponsor-logo"
+                    />
                 </View>
             </LinearGradient>
         </Pressable>

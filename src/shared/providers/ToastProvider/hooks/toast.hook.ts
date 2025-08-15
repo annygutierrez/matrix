@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, Easing } from 'react-native';
-import { Ctx, ToastOptions } from '../utils';
+import { Context, ToastOptions } from '../utils';
 
 export const useToast = () => {
-    const [message, setMessage] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const [position, setPosition] = useState<'top' | 'bottom'>('top');
   const [visible, setVisible] = useState(false);
 
@@ -20,7 +20,13 @@ export const useToast = () => {
 
   const animateIn = useCallback(() => {
     Animated.parallel([
-      Animated.timing(opacity, {toValue: 1, duration: 220, easing: Easing.out(Easing.cubic), useNativeDriver: true}),
+      Animated.timing(
+        opacity, {
+            toValue: 1,
+            duration: 220,
+            easing: Easing.out(Easing.cubic),
+            useNativeDriver: true
+        }),
       Animated.timing(translate, {
         toValue: position === 'top' ? 0 : 0,
         duration: 220,
@@ -32,7 +38,14 @@ export const useToast = () => {
 
   const animateOut = useCallback((onEnd?: () => void) => {
     Animated.parallel([
-      Animated.timing(opacity, {toValue: 0, duration: 180, easing: Easing.in(Easing.cubic), useNativeDriver: true}),
+      Animated.timing(
+        opacity,
+        {
+            toValue: 0,
+            duration: 180,
+            easing: Easing.in(Easing.cubic),
+            useNativeDriver: true
+        }),
       Animated.timing(translate, {
         toValue: position === 'top' ? -16 : 16,
         duration: 180,
@@ -66,7 +79,7 @@ export const useToast = () => {
 
   useEffect(() => () => clearTimer(), []);
 
-  const context: Ctx = {show, hide};
+  const context: Context = { show, hide };
 
   return {
     context,

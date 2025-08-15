@@ -5,7 +5,7 @@ export type ToastOptions = {
     position?: 'top' | 'bottom';
   };
   
-export type Ctx = {
+export type Context = {
     show: (message: string, opts?: ToastOptions) => void;
     hide: () => void;
 };

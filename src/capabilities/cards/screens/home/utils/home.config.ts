@@ -10,7 +10,7 @@ export const defaultCardValues = {
     expiryMonth: 0,
     expiryYear: 0,
     cardholder: '',
-    sessionToken: 'tok_abc',
+    sessionToken: 'token_mocked',
     tokenExpiresAt: 0,
     hmacKey: '',
     cardNumberRaw: ''

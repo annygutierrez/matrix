@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
-import { Ctx } from '../utils/ToastProvider.config';
+import { Context } from '../utils/ToastProvider.config';
 
-export const ToastContext = createContext<Ctx | null>(null);
+export const ToastContext = createContext<Context | null>(null);
 
 export const useToastContext = () => {
   const context = useContext(ToastContext);

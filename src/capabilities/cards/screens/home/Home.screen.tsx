@@ -27,7 +27,8 @@ export const HomeScreen = () => {
                 {...selectedCard}
                 visible={selectedCard.visible}
                 hmacSignature={selectedCard.hmacSignature}
-                onPresented={({nativeEvent}) => console.log('presented', nativeEvent)}
+                // TODO: Handle all events
+                // onPresented={({nativeEvent}) => console.log('presented', nativeEvent)}
                 onClosed={({nativeEvent}) => {
                     onCloseModal()
                 }}
