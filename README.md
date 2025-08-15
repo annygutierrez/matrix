@@ -1,8 +1,19 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Reto Matrix: Security Wallet
 
-# Reto Matrix
+El presente repositorio es una PoC de una Wallet que contiene un módulo nativo en Kotlin para manejar la visualización de datos sensibles en las tarjetas.
+El módulo nativo sólo existe en Kotlin.
 
-## Video de referencia
+## Diseño inicial
+
+<img width="913" height="545" alt="image" src="https://github.com/user-attachments/assets/47c56243-ff75-43bc-ab3a-d62205a4cb9d" />
+
+<img width="875" height="533" alt="image" src="https://github.com/user-attachments/assets/2a5ea000-d316-4c56-a2a3-60ec5b66adc0" />
+
+<img width="875" height="533" alt="image" src="https://github.com/user-attachments/assets/c1088a9f-b29b-4ccf-9d60-63270feb2baa" />
+
+
+## Video del resultado final de la PoC
+
 - https://drive.google.com/file/d/1SEqnO_hv7cE-2vnHh59ayJQyuVb0O-Bs/view?usp=sharing
 
 <img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/f48bc1bd-f82c-4fbe-9bdc-d12ee9776f9a" />
@@ -15,6 +26,8 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+
+# Pasos para levanar el proyecto
 
 ## Step 1: Start Metro
 
