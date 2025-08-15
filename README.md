@@ -2,6 +2,13 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Reto Matrix
 
+<img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/f48bc1bd-f82c-4fbe-9bdc-d12ee9776f9a" />
+
+<img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/baa63d94-f4f5-45f7-ac17-3e00f24078bb" />
+
+<img width="406" height="872" alt="image" src="https://github.com/user-attachments/assets/c4310af3-4473-47c9-a307-06dbbd9582c8" />
+
+
 
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
