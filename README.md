@@ -1,4 +1,4 @@
-# Demo Matrix: Security Wallet
+# Demo Secure Card Viewer: Security Wallet
 
 El presente repositorio es una PoC de una Wallet que contiene un módulo nativo en Kotlin para manejar la visualización de datos sensibles en las tarjetas.
 El módulo nativo sólo existe en Kotlin.
